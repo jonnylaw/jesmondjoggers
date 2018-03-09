@@ -25,10 +25,10 @@ last_handicap = max(all_results$handicap)
 all_results %>%
   select(handicap, position, first_name, second_name, gross_time, running_time, handicap_time) %>% 
   arrange(handicap, position) %>%
+  filter(handicap == last_handicap) %>%
   mutate(gross_time = lubridate::seconds_to_period(gross_time), 
          running_time = lubridate::seconds_to_period(running_time), 
          handicap_time = lubridate::seconds_to_period(handicap_time)) %>%
-  filter(handicap == last_handicap) %>%
   knitr::kable(format = "html", booktabs = T, col.names = c("Handicap", "Position", "First",
                                            "Seconds", "Race Time", "Running Time", "Handicap Time")) %>% 
   kable_styling(latex_options = "striped")
