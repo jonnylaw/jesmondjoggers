@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Handicaps</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Jesmond Joggers Winter Grand Prix</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="results.html">Results</a>
+</li>
+<li>
+  <a href="fastest_times.html">Fastest Times</a>
+</li>
+<li>
+  <a href="overall_standings.html">Overall Standings</a>
+</li>
+<li>
+  <a href="handicaps.html">Handicap Calculation</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Handicaps</h1>
+
+</div>
+
+
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+5k Season’s Best
+</th>
+<th style="text-align:right;">
+Previous Race Time
+</th>
+<th style="text-align:right;">
+Your Handicap Time
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+16M 0S
+</td>
+<td style="text-align:right;">
+11M 44S
+</td>
+<td style="text-align:right;">
+10M 20S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+16M 30S
+</td>
+<td style="text-align:right;">
+12M 6S
+</td>
+<td style="text-align:right;">
+9M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+17M 0S
+</td>
+<td style="text-align:right;">
+12M 28S
+</td>
+<td style="text-align:right;">
+9M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+17M 30S
+</td>
+<td style="text-align:right;">
+12M 50S
+</td>
+<td style="text-align:right;">
+9M 10S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+18M 0S
+</td>
+<td style="text-align:right;">
+13M 12S
+</td>
+<td style="text-align:right;">
+8M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+18M 30S
+</td>
+<td style="text-align:right;">
+13M 34S
+</td>
+<td style="text-align:right;">
+8M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19M 0S
+</td>
+<td style="text-align:right;">
+13M 56S
+</td>
+<td style="text-align:right;">
+8M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19M 30S
+</td>
+<td style="text-align:right;">
+14M 18S
+</td>
+<td style="text-align:right;">
+7M 40S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20M 0S
+</td>
+<td style="text-align:right;">
+14M 40S
+</td>
+<td style="text-align:right;">
+7M 20S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20M 30S
+</td>
+<td style="text-align:right;">
+15M 2S
+</td>
+<td style="text-align:right;">
+7M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+21M 0S
+</td>
+<td style="text-align:right;">
+15M 24S
+</td>
+<td style="text-align:right;">
+6M 40S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+21M 30S
+</td>
+<td style="text-align:right;">
+15M 46S
+</td>
+<td style="text-align:right;">
+6M 10S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+22M 0S
+</td>
+<td style="text-align:right;">
+16M 8S
+</td>
+<td style="text-align:right;">
+5M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+22M 30S
+</td>
+<td style="text-align:right;">
+16M 30S
+</td>
+<td style="text-align:right;">
+5M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+23M 0S
+</td>
+<td style="text-align:right;">
+16M 52S
+</td>
+<td style="text-align:right;">
+5M 10S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+23M 30S
+</td>
+<td style="text-align:right;">
+17M 14S
+</td>
+<td style="text-align:right;">
+4M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+24M 0S
+</td>
+<td style="text-align:right;">
+17M 36S
+</td>
+<td style="text-align:right;">
+4M 20S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+24M 30S
+</td>
+<td style="text-align:right;">
+17M 58S
+</td>
+<td style="text-align:right;">
+4M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25M 0S
+</td>
+<td style="text-align:right;">
+18M 20S
+</td>
+<td style="text-align:right;">
+3M 40S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25M 30S
+</td>
+<td style="text-align:right;">
+18M 42S
+</td>
+<td style="text-align:right;">
+3M 20S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+26M 0S
+</td>
+<td style="text-align:right;">
+19M 4S
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+26M 30S
+</td>
+<td style="text-align:right;">
+19M 26S
+</td>
+<td style="text-align:right;">
+2M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27M 0S
+</td>
+<td style="text-align:right;">
+19M 48S
+</td>
+<td style="text-align:right;">
+2M 10S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27M 30S
+</td>
+<td style="text-align:right;">
+20M 10S
+</td>
+<td style="text-align:right;">
+1M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+28M 0S
+</td>
+<td style="text-align:right;">
+20M 32S
+</td>
+<td style="text-align:right;">
+1M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+28M 30S
+</td>
+<td style="text-align:right;">
+20M 54S
+</td>
+<td style="text-align:right;">
+1M 10S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+29M 0S
+</td>
+<td style="text-align:right;">
+21M 16S
+</td>
+<td style="text-align:right;">
+40S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+29M 30S
+</td>
+<td style="text-align:right;">
+21M 38S
+</td>
+<td style="text-align:right;">
+20S
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+30M 0S
+</td>
+<td style="text-align:right;">
+22M 0S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+</tbody>
+</table>
+<div id="new-handicaps" class="section level2">
+<h2>New Handicaps</h2>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+First
+</th>
+<th style="text-align:left;">
+Second
+</th>
+<th style="text-align:right;">
+Handicap
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Kari
+</td>
+<td style="text-align:left;">
+Best
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rosie
+</td>
+<td style="text-align:left;">
+England
+</td>
+<td style="text-align:right;">
+20S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Esther
+</td>
+<td style="text-align:left;">
+Carys Moore
+</td>
+<td style="text-align:right;">
+40S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zhang
+</td>
+<td style="text-align:left;">
+Zhao Thai
+</td>
+<td style="text-align:right;">
+40S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Izzy
+</td>
+<td style="text-align:left;">
+Chen
+</td>
+<td style="text-align:right;">
+1M 10S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kate
+</td>
+<td style="text-align:left;">
+Winstanley
+</td>
+<td style="text-align:right;">
+1M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+David
+</td>
+<td style="text-align:left;">
+Newman
+</td>
+<td style="text-align:right;">
+1M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jim
+</td>
+<td style="text-align:left;">
+Anderson
+</td>
+<td style="text-align:right;">
+1M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laura
+</td>
+<td style="text-align:left;">
+Falconer
+</td>
+<td style="text-align:right;">
+1M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alex
+</td>
+<td style="text-align:left;">
+Dyter
+</td>
+<td style="text-align:right;">
+2M 10S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+James
+</td>
+<td style="text-align:left;">
+Harper
+</td>
+<td style="text-align:right;">
+2M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kate
+</td>
+<td style="text-align:left;">
+Langley
+</td>
+<td style="text-align:right;">
+2M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Katie
+</td>
+<td style="text-align:left;">
+Joyce
+</td>
+<td style="text-align:right;">
+2M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lottie
+</td>
+<td style="text-align:left;">
+Rhodes
+</td>
+<td style="text-align:right;">
+2M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Florian
+</td>
+<td style="text-align:left;">
+Goth
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Helen
+</td>
+<td style="text-align:left;">
+Ruud
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ian
+</td>
+<td style="text-align:left;">
+McDonald
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Meg
+</td>
+<td style="text-align:left;">
+Holmes
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stephen
+</td>
+<td style="text-align:left;">
+Peverley
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ella
+</td>
+<td style="text-align:left;">
+May Foreman
+</td>
+<td style="text-align:right;">
+3M 40S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Helen
+</td>
+<td style="text-align:left;">
+Golding
+</td>
+<td style="text-align:right;">
+3M 40S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Matt
+</td>
+<td style="text-align:left;">
+Joseph
+</td>
+<td style="text-align:right;">
+3M 40S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Andrew
+</td>
+<td style="text-align:left;">
+Watson
+</td>
+<td style="text-align:right;">
+4M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Geoff
+</td>
+<td style="text-align:left;">
+Blair
+</td>
+<td style="text-align:right;">
+4M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Greg
+</td>
+<td style="text-align:left;">
+Stamp
+</td>
+<td style="text-align:right;">
+4M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laura
+</td>
+<td style="text-align:left;">
+Cheetham
+</td>
+<td style="text-align:right;">
+4M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Will
+</td>
+<td style="text-align:left;">
+Mulroy
+</td>
+<td style="text-align:right;">
+5M 10S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Angus
+</td>
+<td style="text-align:left;">
+Miller
+</td>
+<td style="text-align:right;">
+5M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mike
+</td>
+<td style="text-align:left;">
+AC
+</td>
+<td style="text-align:right;">
+5M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+John
+</td>
+<td style="text-align:left;">
+Reicher
+</td>
+<td style="text-align:right;">
+5M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Richard
+</td>
+<td style="text-align:left;">
+Gribbin
+</td>
+<td style="text-align:right;">
+5M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tom
+</td>
+<td style="text-align:left;">
+Kennedy
+</td>
+<td style="text-align:right;">
+5M 50S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Harry
+</td>
+<td style="text-align:left;">
+Pulham
+</td>
+<td style="text-align:right;">
+7M 20S
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

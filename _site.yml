@@ -1,0 +1,19 @@
+name: "jesmond-joggers"
+output_dir: "docs"
+navbar:
+  title: "Jesmond Joggers Winter Grand Prix"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Results"
+      href: results.html
+    - text: "Fastest Times"
+      href: fastest_times.html
+    - text: "Overall Standings"
+      href: overall_standings.html
+    - text: "Handicap Calculation"
+      href: handicaps.html
+output:
+  html_document:
+    theme: cerulean
+      

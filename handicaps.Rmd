@@ -1,0 +1,95 @@
+---
+title: "Handicaps"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+library(tidyverse)
+library(kableExtra)
+library(lubridate)
+theme_set(theme_minimal())
+```
+
+```{r reigel_formula}
+reigel_formula = function(time1, distance1 = 3.1, distance2 = 2.145) {
+  time1 * (distance2/distance1) * 1.06
+}
+```
+
+```{r calculate_handicaps}
+calculate_handicaps = function(slowest_runner = as.numeric(lubridate::ms("30:00"))) {
+  times = seq(from = as.numeric(lubridate::ms("16:00")), to = slowest_runner, by = 30)
+  pretty_times = lubridate::seconds_to_period(times)
+  
+  data_frame(time_5k = pretty_times) %>%
+    mutate(expected_finish_time = reigel_formula(as.numeric(time_5k))) %>%
+    mutate(handicap_time = (max(expected_finish_time) - expected_finish_time)) %>%
+    mutate(handicap_time_rounded = round(handicap_time, -1)) %>%
+    select(time_5k, handicap_time_rounded, expected_finish_time) %>%
+    mutate(handicap_time = lubridate::seconds_to_period(handicap_time_rounded),
+            expected_finish_time = round(lubridate::seconds_to_period(expected_finish_time), 0)) %>%
+    select(time_5k, expected_finish_time, handicap_time)
+}
+```
+
+```{r format_handicaps}
+calculate_handicaps() %>%
+  knitr::kable(format = "html", booktabs = T, col.names = c("5k Season's Best", "Previous Race Time", "Your Handicap Time")) %>% 
+  kable_styling(latex_options = "striped")
+```
+
+```{r all_results, cache=FALSE}
+source("scripts/read_results.R", )
+```
+
+```{r best-results, results='asis'}
+best_results = all_results %>%
+  mutate(time = running_time) %>%
+  group_by(first_name, second_name) %>%
+  summarise(time = min(time))
+
+best_results$pretty_time = lubridate::seconds_to_period(best_results$time)
+```
+
+```{r average-results}
+average_results = all_results %>%
+  mutate(time = running_time) %>%
+  group_by(first_name, second_name) %>%
+  summarise(time = mean(time))
+```
+
+## New Handicaps
+
+```{r calculate-new-handicaps}
+# Get current handicaps from 5k PB
+current_handicaps = calculate_handicaps() %>%
+  mutate(handicap = period_to_seconds(handicap_time)) %>% 
+  .$handicap
+
+# Round the raw handicap (longest_run - your_run_time) to one of the current handicaps
+round_to_handicap = function(new_handicap_time, current_handicaps) {
+  i = which.min(abs(new_handicap_time - current_handicaps))
+  current_handicaps[i]
+}
+
+# Calculate the longest run of all runs
+longest_run = max(average_results$time)
+
+# Calculate new handicaps
+new_handicaps = average_results %>%
+  mutate(new_handicap_raw = longest_run - time) %>%
+  rowwise() %>%
+  mutate(new_handicap = round_to_handicap(new_handicap_raw, current_handicaps)) %>%
+  select(first_name, second_name, new_handicap) %>%
+  arrange(new_handicap)
+
+new_handicaps$new_handicap = seconds_to_period(new_handicaps$new_handicap)
+```
+
+```{r display-new-handicaps}
+# Display new handicaps by time
+new_handicaps %>%
+  knitr::kable(format = "html", booktabs = T, col.names = c("First", "Second", "Handicap")) %>% 
+  kable_styling(latex_options = "striped")
+```
