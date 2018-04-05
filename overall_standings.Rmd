@@ -4,7 +4,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(tidyverse)
 library(kableExtra)
 library(lubridate)
@@ -37,8 +37,8 @@ all_results %>%
   filter(total_races >= 3) %>%
   ungroup() %>%
   mutate(position = dplyr::row_number(points)) %>%
-  select(position, first_name, second_name, points, `1`, `2`, `3`, `4`) %>%
+  select(position, first_name, second_name, points, `1`, `2`, `3`, `4`, `5`) %>%
   arrange(position) %>%
-  knitr::kable(format = "html", booktabs = T, col.names = c("Position", "First", "Second", "Points", "Handicap_1", "Handicap_2", "Handicap_3", "Handicap_4")) %>% 
+  knitr::kable(format = "html", booktabs = T, col.names = c("Position", "First", "Second", "Points", "Handicap 1", "Handicap 2", "Handicap 3", "Handicap 4", "Handicap 5")) %>% 
   kable_styling(latex_options = "striped")
 ```
