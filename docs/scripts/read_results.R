@@ -64,9 +64,12 @@ new_handicaps = average_results %>%
 
 # Calculate estimated race time from 5k PB
 calculated_handicaps = tibble(
-  first_name = c("Chris", "Emma", "Ben"),
-  second_name = c("Lawrence", "Glover", "Bedlington"),
-  time_5k = c(as.numeric(lubridate::ms("20:00")), as.numeric(lubridate::ms("21:00")), as.numeric(lubridate::ms("20:30"))) 
+  first_name = c("Chris", "Emma", "Ben", "Kate"),
+  second_name = c("Lawrence", "Glover", "Bedlington", "Black"),
+  time_5k = c(as.numeric(lubridate::ms("20:00")), 
+              as.numeric(lubridate::ms("21:00")), 
+              as.numeric(lubridate::ms("20:30")),
+              as.numeric(lubridate::ms("21:30"))) 
 ) %>%
   mutate(race_time = reigel_formula(time_5k)) %>%
   mutate(handicap_time_raw = longest_run - race_time) %>%
