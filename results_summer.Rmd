@@ -13,12 +13,12 @@ theme_set(theme_minimal())
 
 ```{r all-results}
 source("scripts/read_results.R")
-winter_results = all_results %>% 
-  filter(stringr::str_detect(string = season, pattern = "Winter"))
+summer_results = all_results %>% 
+  filter(season == "Summer 2018")
 ```
 
-```{r print_winter_results, results='asis'}
-winter_results %>%
+```{r print_all_results, results='asis', eval=FALSE}
+summer_results %>% 
   select(handicap, position, first_name, second_name, gross_time, running_time, handicap_time) %>% 
   arrange(handicap, position) %>%
   mutate(gross_time = lubridate::seconds_to_period(gross_time), 

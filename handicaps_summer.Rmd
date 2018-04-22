@@ -12,14 +12,7 @@ theme_set(theme_minimal())
 ```
 
 ```{r all_results, cache=FALSE}
-source("scripts/read_results.R", )
-```
-
-```{r format_handicaps}
-calculate_handicaps() %>%
-  knitr::kable(format = "html", booktabs = T, 
-               col.names = c("5k Season's Best", "Previous Race Time", "Your Handicap Time")) %>% 
-  kable_styling(latex_options = "striped")
+source("scripts/read_results.R")
 ```
 
 ```{r best-results, results='asis'}
@@ -29,13 +22,6 @@ best_results = all_results %>%
   summarise(time = min(time))
 
 best_results$pretty_time = lubridate::seconds_to_period(best_results$time)
-```
-
-```{r average-results}
-average_results = all_results %>%
-  mutate(time = running_time) %>%
-  group_by(first_name, second_name) %>%
-  summarise(time = mean(time))
 ```
 
 ## New Handicaps
@@ -53,11 +39,12 @@ round_to_handicap = function(new_handicap_time, current_handicaps) {
 }
 
 # Calculate the longest run of all runs
-longest_run = max(average_results$time)
+longest_run = reigel_formula(time1 = max(average_results$time), distance1 = 2.145, distance2 = 3.1)
 
 # Calculate new handicaps
-new_handicaps = average_results %>%
-  mutate(new_handicap_raw = longest_run - time) %>%
+new_handicaps = best_results %>%
+  mutate(adjusted_time = reigel_formula(time, distance1 = 2.145, distance2 = 3.1)) %>%
+  mutate(new_handicap_raw = longest_run - adjusted_time) %>%
   rowwise() %>%
   mutate(new_handicap = round_to_handicap(new_handicap_raw, current_handicaps)) %>%
   select(first_name, second_name, new_handicap) %>%

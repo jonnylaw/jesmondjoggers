@@ -13,12 +13,12 @@ theme_set(theme_minimal())
 
 ```{r all_results}
 source("scripts/read_results.R")
-winter_results = all_results %>% 
-  filter(stringr::str_detect(string = season, pattern = "Winter"))
+summer_results = all_results %>% 
+  filter(season == "Summer 2018")
 ```
 
-```{r fastest-times}
-winter_results %>%
+```{r fastest-times, eval=FALSE}
+summer_results %>%
   group_by(sex, handicap) %>%
   top_n(3, wt = desc(running_time)) %>%
   ungroup() %>%

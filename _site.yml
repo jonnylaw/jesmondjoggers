@@ -1,19 +1,32 @@
-name: "jesmond-joggers"
-output_dir: "docs"
+name: jesmond-joggers
+output_dir: docs
 navbar:
-  title: "Jesmond Joggers Winter Grand Prix"
+  title: Jesmond Joggers Grand Prix
   left:
-    - text: "Home"
-      href: index.html
-    - text: "Results"
+  - text: Home
+    icon: fa-home
+    href: index.html
+  - text: Summer Grand Prix 2018
+    menu:
+    - text: Results
+      href: results_summer.html
+    - text: Fastest Times
+      href: fastest_times_summer.html
+    - text: Overall Standings
+      href: overall_standings_summer.html
+    - text: Handicaps
+      href: handicaps_summer.html
+  - text: Winter Grand Prix 2017/18
+    menu:
+    - text: Results
       href: results.html
-    - text: "Fastest Times"
+    - text: Fastest Times
       href: fastest_times.html
-    - text: "Overall Standings"
+    - text: Overall Standings
       href: overall_standings.html
-    - text: "Handicap Calculation"
-      href: handicaps.html
 output:
   html_document:
     theme: cerulean
-      
+    lib_dir: site_libs
+    self_contained: no
+

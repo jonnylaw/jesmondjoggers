@@ -1,5 +1,12 @@
 read_results = function(filename) {
-  read_csv(file = filename, col_types = "icccccc")
+  # Determine if summer or winter
+  summer = stringr::str_detect(string = filename, pattern = "summer")
+  
+  # Parse date
+  date = lubridate::ymd(paste0(stringr::str_extract(string = filename, pattern = "[0-9]+"), "01"))
+  
+  read_csv(file = filename, col_types = "icccccc") %>% 
+    add_column(season = paste(ifelse(summer, yes = "Summer", no = "Winter"), lubridate::year(date)))
 }
 
 results_files = file.path("results", list.files(path = "results", pattern = "*.csv"))
@@ -11,8 +18,8 @@ all_results = results_files %>%
   filter(handicap != "5") %>%
   mutate(handicap_time = gross_time - running_time)
 
-# Final results
-final_handicap = read_results("results/grand_prix_201804.csv") %>%
+# Final results of the winter handicap 2018
+final_handicap = read_results("results/grand_prix_201804_winter.csv") %>%
   mutate(running_time = period_to_seconds(ms(as.character(running_time))))
 
 # The last race is run from scratch so we must read the latest handicaps and calculate the "gross time"
@@ -26,12 +33,13 @@ reigel_formula = function(time1, distance1 = 3.1, distance2 = 2.145) {
   time1 * (distance2/distance1) * 1.06
 }
 
-calculate_handicaps = function(slowest_runner = as.numeric(lubridate::ms("30:00"))) {
+# Use 5k time to predict running time using the Reigel Formula
+calculate_handicaps = function(slowest_runner = as.numeric(lubridate::ms("30:00")), race_distance = 2.145) {
   times = seq(from = as.numeric(lubridate::ms("16:00")), to = slowest_runner, by = 30)
   pretty_times = lubridate::seconds_to_period(times)
   
   data_frame(time_5k = pretty_times) %>%
-    mutate(expected_finish_time = reigel_formula(as.numeric(time_5k))) %>%
+    mutate(expected_finish_time = reigel_formula(time1 = as.numeric(time_5k)), distance1 = 3.1, distance2 = race_distance) %>%
     mutate(handicap_time = (max(expected_finish_time) - expected_finish_time)) %>%
     mutate(handicap_time_rounded = round(handicap_time, -1)) %>%
     select(time_5k, handicap_time_rounded, expected_finish_time) %>%

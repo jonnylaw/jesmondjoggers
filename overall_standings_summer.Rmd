@@ -13,23 +13,23 @@ theme_set(theme_minimal())
 
 ```{r all_results}
 source("scripts/read_results.R")
-winter_results = all_results %>% 
-  filter(stringr::str_detect(string = season, pattern = "Winter"))
+summer_results = all_results %>% 
+  filter(season == "Summer 2018")
 ```
 
 The overall standings are calculated by summing your best finishing position in three (out of five) races.
 
-```{r overall-standings}
-total_races = winter_results %>%
+```{r overall-standings, eval=FALSE}
+total_races = summer_results %>%
   group_by(first_name, second_name) %>%
   summarise(total_races = n())
 
-results_by_handicap = winter_results %>%
+results_by_handicap = summer_results %>%
   select(first_name, second_name, position, handicap) %>%
   group_by(first_name, second_name) %>%
   spread(key = handicap, value = position)
 
-winter_results %>%
+summer_results %>%
   group_by(first_name, second_name) %>%
   top_n(n = 3, wt = desc(position)) %>%
   group_by(first_name, second_name) %>%
