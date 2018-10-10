@@ -6,16 +6,6 @@ navbar:
   - text: Home
     icon: fa-home
     href: index.html
-  - text: Summer Grand Prix 2018
-    menu:
-    - text: Results
-      href: results_summer.html
-    - text: Fastest Times
-      href: fastest_times_summer.html
-    - text: Overall Standings
-      href: overall_standings_summer.html
-    - text: Handicaps
-      href: handicaps_summer.html
   - text: Winter Grand Prix 2017/18
     menu:
     - text: Results

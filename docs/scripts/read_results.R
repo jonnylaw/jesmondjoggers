@@ -1,12 +1,9 @@
 read_results = function(filename) {
-  # Determine if summer or winter
-  summer = stringr::str_detect(string = filename, pattern = "summer")
-  
-  # Parse date
-  date = lubridate::ymd(paste0(stringr::str_extract(string = filename, pattern = "[0-9]+"), "01"))
+  # Parse year and handicap number
+  year_handicap = stringr::str_extract(string = filename, pattern = "[0-9]+")
   
   read_csv(file = filename, col_types = "icccccc") %>% 
-    add_column(season = paste(ifelse(summer, yes = "Summer", no = "Winter"), lubridate::year(date)))
+    mutate(handicap = year_handicap)
 }
 
 results_files = file.path("results", list.files(path = "results", pattern = "*.csv"))
@@ -19,7 +16,7 @@ all_results = results_files %>%
   mutate(handicap_time = gross_time - running_time)
 
 # Final results of the winter handicap 2018
-final_handicap = read_results("results/grand_prix_201804_winter.csv") %>%
+final_handicap = read_results("results/grand_prix_20175_winter.csv") %>%
   mutate(running_time = period_to_seconds(ms(as.character(running_time))))
 
 # The last race is run from scratch so we must read the latest handicaps and calculate the "gross time"

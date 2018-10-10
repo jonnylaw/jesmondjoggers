@@ -20,8 +20,9 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -31,12 +32,10 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
 }
 </script>
 
@@ -187,27 +186,6 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Summer Grand Prix 2018
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="results_summer.html">Results</a>
-    </li>
-    <li>
-      <a href="fastest_times_summer.html">Fastest Times</a>
-    </li>
-    <li>
-      <a href="overall_standings_summer.html">Overall Standings</a>
-    </li>
-    <li>
-      <a href="handicaps_summer.html">Handicaps</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Winter Grand Prix 2017/18
      
     <span class="caret"></span>
@@ -267,152 +245,16 @@ Time
 F
 </td>
 <td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-Laura
-</td>
-<td style="text-align:left;">
-Cheetham
-</td>
-<td style="text-align:right;">
-14M 23S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-Katie
-</td>
-<td style="text-align:left;">
-Joyce
-</td>
-<td style="text-align:right;">
-16M 50S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-Lottie
-</td>
-<td style="text-align:left;">
-Rhodes
-</td>
-<td style="text-align:right;">
-17M 3S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-Helen
-</td>
-<td style="text-align:left;">
-Ruud
-</td>
-<td style="text-align:right;">
-15M 54S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-Katie
-</td>
-<td style="text-align:left;">
-Joyce
-</td>
-<td style="text-align:right;">
-15M 58S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-Meg
-</td>
-<td style="text-align:left;">
-Holmes
-</td>
-<td style="text-align:right;">
-16M 28S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-Laura
-</td>
-<td style="text-align:left;">
-Cheetham
-</td>
-<td style="text-align:right;">
-13M 47S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-Helen
-</td>
-<td style="text-align:left;">
-Golding
-</td>
-<td style="text-align:right;">
-15M 26S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-3
+20181
 </td>
 <td style="text-align:left;">
 Ella
 </td>
 <td style="text-align:left;">
-May Foreman
+Foreman
 </td>
 <td style="text-align:right;">
-15M 53S
+14M 25S
 </td>
 </tr>
 <tr>
@@ -420,16 +262,16 @@ May Foreman
 F
 </td>
 <td style="text-align:left;">
-4
+20181
 </td>
 <td style="text-align:left;">
-Laura
+Kate
 </td>
 <td style="text-align:left;">
-Cheetham
+Black
 </td>
 <td style="text-align:right;">
-14M 10S
+15M 25S
 </td>
 </tr>
 <tr>
@@ -437,84 +279,16 @@ Cheetham
 F
 </td>
 <td style="text-align:left;">
-4
+20181
 </td>
 <td style="text-align:left;">
-Ella
+Beth
 </td>
 <td style="text-align:left;">
-May Foreman
+Deutsch
 </td>
 <td style="text-align:right;">
-15M 7S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-Lottie
-</td>
-<td style="text-align:left;">
-Rhodes
-</td>
-<td style="text-align:right;">
-16M 18S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-Laura
-</td>
-<td style="text-align:left;">
-Cheetham
-</td>
-<td style="text-align:right;">
-14M 49S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-Emma
-</td>
-<td style="text-align:left;">
-Glover
-</td>
-<td style="text-align:right;">
-15M 11S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-F
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-Ella
-</td>
-<td style="text-align:left;">
-May Foreman
-</td>
-<td style="text-align:right;">
-15M 45S
+17M 26S
 </td>
 </tr>
 <tr>
@@ -522,16 +296,16 @@ May Foreman
 M
 </td>
 <td style="text-align:left;">
-1
+20181
 </td>
 <td style="text-align:left;">
-John
+Joe
 </td>
 <td style="text-align:left;">
-Reicher
+Cherry
 </td>
 <td style="text-align:right;">
-13M 42S
+12M 40S
 </td>
 </tr>
 <tr>
@@ -539,75 +313,7 @@ Reicher
 M
 </td>
 <td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-Will
-</td>
-<td style="text-align:left;">
-Mulroy
-</td>
-<td style="text-align:right;">
-14M 0S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-Mike
-</td>
-<td style="text-align:left;">
-AC
-</td>
-<td style="text-align:right;">
-14M 16S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-Harry
-</td>
-<td style="text-align:left;">
-Pulham
-</td>
-<td style="text-align:right;">
-11M 47S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-Mike
-</td>
-<td style="text-align:left;">
-AC
-</td>
-<td style="text-align:right;">
-13M 2S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-2
+20181
 </td>
 <td style="text-align:left;">
 Richard
@@ -616,7 +322,7 @@ Richard
 Gribbin
 </td>
 <td style="text-align:right;">
-13M 15S
+12M 43S
 </td>
 </tr>
 <tr>
@@ -624,152 +330,16 @@ Gribbin
 M
 </td>
 <td style="text-align:left;">
-3
+20181
 </td>
 <td style="text-align:left;">
-Harry
+David
 </td>
 <td style="text-align:left;">
-Pulham
+Webster
 </td>
 <td style="text-align:right;">
-11M 50S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-John
-</td>
-<td style="text-align:left;">
-Reicher
-</td>
-<td style="text-align:right;">
-13M 13S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-Richard
-</td>
-<td style="text-align:left;">
-Gribbin
-</td>
-<td style="text-align:right;">
-13M 21S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-Harry
-</td>
-<td style="text-align:left;">
-Pulham
-</td>
-<td style="text-align:right;">
-11M 46S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-John
-</td>
-<td style="text-align:left;">
-Reicher
-</td>
-<td style="text-align:right;">
-13M 9S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-Tom
-</td>
-<td style="text-align:left;">
-Kennedy
-</td>
-<td style="text-align:right;">
-13M 10S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-Chris
-</td>
-<td style="text-align:left;">
-Lawrence
-</td>
-<td style="text-align:right;">
-13M 54S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-Greg
-</td>
-<td style="text-align:left;">
-Stamp
-</td>
-<td style="text-align:right;">
-14M 28S
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-M
-</td>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-Florian
-</td>
-<td style="text-align:left;">
-Goth
-</td>
-<td style="text-align:right;">
-14M 37S
+12M 44S
 </td>
 </tr>
 </tbody>
