@@ -6,7 +6,7 @@ navbar:
   - text: Home
     icon: fa-home
     href: index.html
-  - text: Winter Grand Prix 2017/18
+  - text: Winter Grand Prix 2018/19
     menu:
     - text: Results
       href: results.html
