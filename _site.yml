@@ -15,7 +15,7 @@ navbar:
     - text: Overall Standings
       href: overall_standings.html
     - text: Handicaps
-      href: overall_standings.html
+      href: handicaps.html
 output:
   html_document:
     theme: cerulean
