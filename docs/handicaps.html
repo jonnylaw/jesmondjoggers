@@ -20,10 +20,12 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -32,10 +34,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -89,6 +93,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -199,6 +206,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="overall_standings.html">Overall Standings</a>
+    </li>
+    <li>
+      <a href="overall_standings.html">Handicaps</a>
     </li>
   </ul>
 </li>
@@ -569,6 +579,9 @@ Second
 <th style="text-align:right;">
 Handicap
 </th>
+<th style="text-align:left;">
+group
+</th>
 </tr>
 </thead>
 <tbody>
@@ -582,6 +595,9 @@ Muthukumar
 <td style="text-align:right;">
 0S
 </td>
+<td style="text-align:left;">
+1
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -592,6 +608,9 @@ Best
 </td>
 <td style="text-align:right;">
 3M 40S
+</td>
+<td style="text-align:left;">
+1
 </td>
 </tr>
 <tr>
@@ -604,6 +623,9 @@ Shenton
 <td style="text-align:right;">
 4M 0S
 </td>
+<td style="text-align:left;">
+1
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -614,6 +636,9 @@ England
 </td>
 <td style="text-align:right;">
 4M 0S
+</td>
+<td style="text-align:left;">
+1
 </td>
 </tr>
 <tr>
@@ -626,6 +651,9 @@ Carys Moore
 <td style="text-align:right;">
 4M 20S
 </td>
+<td style="text-align:left;">
+1
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -636,6 +664,9 @@ Richardson
 </td>
 <td style="text-align:right;">
 4M 20S
+</td>
+<td style="text-align:left;">
+1
 </td>
 </tr>
 <tr>
@@ -648,6 +679,9 @@ Chen
 <td style="text-align:right;">
 4M 50S
 </td>
+<td style="text-align:left;">
+1
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -658,6 +692,9 @@ Zhao Thai
 </td>
 <td style="text-align:right;">
 4M 50S
+</td>
+<td style="text-align:left;">
+1
 </td>
 </tr>
 <tr>
@@ -670,6 +707,9 @@ Deutsch
 <td style="text-align:right;">
 5M 30S
 </td>
+<td style="text-align:left;">
+1
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -680,6 +720,9 @@ Anderson
 </td>
 <td style="text-align:right;">
 5M 30S
+</td>
+<td style="text-align:left;">
+1
 </td>
 </tr>
 <tr>
@@ -692,6 +735,9 @@ Winstanley
 <td style="text-align:right;">
 5M 30S
 </td>
+<td style="text-align:left;">
+1
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -702,6 +748,9 @@ Falconer
 </td>
 <td style="text-align:right;">
 5M 30S
+</td>
+<td style="text-align:left;">
+1
 </td>
 </tr>
 <tr>
@@ -714,6 +763,9 @@ Newman
 <td style="text-align:right;">
 5M 50S
 </td>
+<td style="text-align:left;">
+1
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -724,6 +776,9 @@ Dyter
 </td>
 <td style="text-align:right;">
 6M 10S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -736,6 +791,9 @@ Watson
 <td style="text-align:right;">
 6M 10S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -746,6 +804,9 @@ Harper
 </td>
 <td style="text-align:right;">
 6M 10S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -758,6 +819,9 @@ Langley
 <td style="text-align:right;">
 6M 10S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -768,6 +832,9 @@ Rhodes
 </td>
 <td style="text-align:right;">
 6M 10S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -780,6 +847,9 @@ McDonald
 <td style="text-align:right;">
 6M 40S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -790,6 +860,9 @@ Black
 </td>
 <td style="text-align:right;">
 6M 40S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -802,6 +875,9 @@ Joyce
 <td style="text-align:right;">
 6M 40S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -812,6 +888,9 @@ Holmes
 </td>
 <td style="text-align:right;">
 6M 40S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -824,6 +903,9 @@ Ruud
 <td style="text-align:right;">
 7M 0S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -834,6 +916,9 @@ Peverley
 </td>
 <td style="text-align:right;">
 7M 0S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -846,6 +931,9 @@ May Foreman
 <td style="text-align:right;">
 7M 20S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -856,6 +944,9 @@ Golding
 </td>
 <td style="text-align:right;">
 7M 20S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -868,6 +959,9 @@ Joseph
 <td style="text-align:right;">
 7M 20S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -878,6 +972,9 @@ Foster
 </td>
 <td style="text-align:right;">
 7M 20S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -890,6 +987,9 @@ Watson
 <td style="text-align:right;">
 7M 40S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -900,6 +1000,9 @@ Glover
 </td>
 <td style="text-align:right;">
 7M 40S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -912,6 +1015,9 @@ Goth
 <td style="text-align:right;">
 7M 40S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -922,6 +1028,9 @@ Blair
 </td>
 <td style="text-align:right;">
 7M 40S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -934,6 +1043,9 @@ Clark
 <td style="text-align:right;">
 7M 40S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -944,6 +1056,9 @@ Bedlington
 </td>
 <td style="text-align:right;">
 8M 0S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -956,6 +1071,9 @@ Cook
 <td style="text-align:right;">
 8M 0S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -966,6 +1084,9 @@ Foreman
 </td>
 <td style="text-align:right;">
 8M 30S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -978,6 +1099,9 @@ Stamp
 <td style="text-align:right;">
 8M 30S
 </td>
+<td style="text-align:left;">
+2
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -988,6 +1112,9 @@ Cheetham
 </td>
 <td style="text-align:right;">
 8M 30S
+</td>
+<td style="text-align:left;">
+2
 </td>
 </tr>
 <tr>
@@ -1000,6 +1127,9 @@ Lawrence
 <td style="text-align:right;">
 8M 50S
 </td>
+<td style="text-align:left;">
+3
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1010,6 +1140,9 @@ Miller
 </td>
 <td style="text-align:right;">
 9M 10S
+</td>
+<td style="text-align:left;">
+3
 </td>
 </tr>
 <tr>
@@ -1022,6 +1155,9 @@ AC
 <td style="text-align:right;">
 9M 10S
 </td>
+<td style="text-align:left;">
+3
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1032,6 +1168,9 @@ Willers
 </td>
 <td style="text-align:right;">
 9M 10S
+</td>
+<td style="text-align:left;">
+3
 </td>
 </tr>
 <tr>
@@ -1044,6 +1183,9 @@ Harper
 <td style="text-align:right;">
 9M 10S
 </td>
+<td style="text-align:left;">
+3
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1054,6 +1196,9 @@ Mulroy
 </td>
 <td style="text-align:right;">
 9M 10S
+</td>
+<td style="text-align:left;">
+3
 </td>
 </tr>
 <tr>
@@ -1066,6 +1211,9 @@ Reicher
 <td style="text-align:right;">
 9M 30S
 </td>
+<td style="text-align:left;">
+3
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1076,6 +1224,9 @@ Haass
 </td>
 <td style="text-align:right;">
 9M 30S
+</td>
+<td style="text-align:left;">
+3
 </td>
 </tr>
 <tr>
@@ -1088,6 +1239,9 @@ Gribbin
 <td style="text-align:right;">
 9M 50S
 </td>
+<td style="text-align:left;">
+3
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1098,6 +1252,9 @@ Kennedy
 </td>
 <td style="text-align:right;">
 9M 50S
+</td>
+<td style="text-align:left;">
+3
 </td>
 </tr>
 <tr>
@@ -1110,6 +1267,9 @@ Webster
 <td style="text-align:right;">
 10M 20S
 </td>
+<td style="text-align:left;">
+3
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1120,6 +1280,9 @@ Pulham
 </td>
 <td style="text-align:right;">
 10M 20S
+</td>
+<td style="text-align:left;">
+3
 </td>
 </tr>
 <tr>
@@ -1132,6 +1295,9 @@ Wilkens
 <td style="text-align:right;">
 10M 20S
 </td>
+<td style="text-align:left;">
+3
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1142,6 +1308,9 @@ Cherry
 </td>
 <td style="text-align:right;">
 10M 20S
+</td>
+<td style="text-align:left;">
+3
 </td>
 </tr>
 </tbody>

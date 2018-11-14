@@ -60,7 +60,8 @@ new_handicaps = average_results %>%
   mutate(new_handicap_raw = longest_run - time) %>%
   rowwise() %>%
   mutate(new_handicap = round_to_handicap(new_handicap_raw, current_handicaps)) %>%
-  select(first_name, second_name, new_handicap) %>%
+  mutate(group = cut(new_handicap_raw, breaks = c(0, 360, 520, 1000), labels = 1:3, include.lowest = T)) %>%
+  select(first_name, second_name, new_handicap, group) %>%
   arrange(new_handicap)
 
 new_handicaps$new_handicap = seconds_to_period(new_handicaps$new_handicap)
@@ -69,6 +70,6 @@ new_handicaps$new_handicap = seconds_to_period(new_handicaps$new_handicap)
 ```{r display-new-handicaps}
 # Display new handicaps by time
 new_handicaps %>%
-  knitr::kable(format = "html", booktabs = T, col.names = c("First", "Second", "Handicap")) %>% 
+  knitr::kable(format = "html", booktabs = T, col.names = c("First", "Second", "Handicap", "group")) %>% 
   kable_styling(latex_options = "striped")
 ```
