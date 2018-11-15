@@ -20,7 +20,7 @@ winter_results = all_results %>%
 ```{r print_winter_results, results='asis'}
 winter_results %>%
   select(handicap, position, first_name, second_name, gross_time, running_time, handicap_time) %>% 
-  arrange(handicap, position) %>%
+  arrange(desc(handicap), position) %>%
   mutate(gross_time = lubridate::seconds_to_period(gross_time), 
          running_time = lubridate::seconds_to_period(running_time), 
          handicap_time = lubridate::seconds_to_period(handicap_time)) %>%
