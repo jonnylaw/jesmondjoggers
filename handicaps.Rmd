@@ -33,6 +33,7 @@ best_results$pretty_time = lubridate::seconds_to_period(best_results$time)
 
 ```{r average-results}
 average_results = all_results %>%
+  filter(handicap != "20182") %>%
   mutate(time = running_time) %>%
   group_by(first_name, second_name) %>%
   summarise(time = mean(time))
