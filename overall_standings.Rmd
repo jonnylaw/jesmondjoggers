@@ -25,8 +25,9 @@ total_races = winter_results %>%
   summarise(total_races = n())
 
 results_by_handicap = winter_results %>%
+  drop_na() %>%
   select(first_name, second_name, position, handicap) %>%
-  group_by(first_name, second_name) %>%
+  group_by(first_name, second_name) %>% 
   spread(key = handicap, value = position)
 
 winter_results %>%
@@ -36,12 +37,12 @@ winter_results %>%
   summarise(points = sum(position)) %>%
   inner_join(total_races) %>%
   inner_join(results_by_handicap) %>%
-  # filter(total_races >= 3) %>%
+  filter(total_races >= 3) %>%
   ungroup() %>%
-  mutate(position = dplyr::row_number(points)) %>%
-  select(position, total_races, first_name, second_name, points, `20181`, `20182`) %>%
+  mutate(position = dplyr::dense_rank(points)) %>%
+  select(position, total_races, first_name, second_name, points, `20181`, `20182`, `20183`) %>%
   arrange(desc(total_races), position) %>%
   select(-total_races) %>%
-  knitr::kable(format = "html", booktabs = T, col.names = c("Position", "First", "Second", "Points", "Handicap 1", "Handicap 2")) %>% 
+  knitr::kable(format = "html", booktabs = T, col.names = c("Position", "First", "Second", "Points", "Handicap 1", "Handicap 2", "Handicap 3")) %>% 
   kable_styling(latex_options = "striped")
 ```
