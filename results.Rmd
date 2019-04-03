@@ -24,7 +24,8 @@ winter_results %>%
   mutate(gross_time = lubridate::seconds_to_period(gross_time), 
          running_time = lubridate::seconds_to_period(running_time), 
          handicap_time = lubridate::seconds_to_period(handicap_time)) %>%
-  knitr::kable(format = "html", booktabs = T, col.names = c("Handicap", "Position", "First",
+  split(.$handicap) %>% 
+  map(~ knitr::kable(x = ., format = "html", booktabs = T, col.names = c("Handicap", "Position", "First",
                                            "Seconds", "Race Time", "Running Time", "Handicap Time")) %>% 
-  kable_styling(latex_options = "striped")
+  kable_styling(latex_options = "striped"))
 ```
