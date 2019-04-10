@@ -40,9 +40,9 @@ winter_results %>%
   filter(total_races >= 3) %>%
   ungroup() %>%
   mutate(position = dplyr::dense_rank(points)) %>%
-  select(position, total_races, first_name, second_name, points, `20181`, `20182`, `20183`, `20184`, `20185`) %>%
+  select(position, total_races, first_name, second_name, points, `20181`, `20182`, `20183`, `20184`, `20185`, `20186`) %>%
   arrange(position) %>%
   select(-total_races) %>%
-  knitr::kable(format = "html", booktabs = T, col.names = c("Position", "First", "Second", "Points", "Handicap 1", "Handicap 2", "Handicap 3", "Handicap 4", "Handicap 5")) %>% 
+  knitr::kable(format = "html", booktabs = T, col.names = c("Position", "First", "Second", "Points", "Handicap 1", "Handicap 2", "Handicap 3", "Handicap 4", "Handicap 5", "Handicap 6")) %>% 
   kable_styling(latex_options = "striped")
 ```
