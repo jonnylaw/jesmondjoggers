@@ -32,7 +32,8 @@ results_by_handicap = winter_results %>%
 
 winter_results %>%
   group_by(first_name, second_name) %>%
-  top_n(n = 3, wt = desc(position)) %>%
+  mutate(position_helper = row_number(position)) %>% 
+  filter(position_helper <= 3) %>% 
   group_by(first_name, second_name) %>%
   summarise(points = sum(position)) %>%
   inner_join(total_races) %>%
