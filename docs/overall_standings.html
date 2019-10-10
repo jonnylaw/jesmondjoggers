@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -72,9 +73,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -193,8 +192,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -251,20 +248,17 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -304,9 +298,6 @@ $(document).ready(function () {
     <li>
       <a href="overall_standings.html">Overall Standings</a>
     </li>
-    <li>
-      <a href="handicaps.html">Handicaps</a>
-    </li>
   </ul>
 </li>
       </ul>
@@ -326,7 +317,7 @@ $(document).ready(function () {
 </div>
 
 
-<p>The overall standings are calculated by summing your best finishing position in three (out of five) races.</p>
+<p>The overall standings are calculated by summing your best finishing position in three races.</p>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -345,21 +336,6 @@ Points
 <th style="text-align:right;">
 Handicap 1
 </th>
-<th style="text-align:right;">
-Handicap 2
-</th>
-<th style="text-align:right;">
-Handicap 3
-</th>
-<th style="text-align:right;">
-Handicap 4
-</th>
-<th style="text-align:right;">
-Handicap 5
-</th>
-<th style="text-align:right;">
-Handicap 6
-</th>
 </tr>
 </thead>
 <tbody>
@@ -368,164 +344,21 @@ Handicap 6
 1
 </td>
 <td style="text-align:left;">
-Marcus
+Dan
 </td>
 <td style="text-align:left;">
-Clark
-</td>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:left;">
-Greg
-</td>
-<td style="text-align:left;">
-Stamp
-</td>
-<td style="text-align:right;">
-13
-</td>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-11
-</td>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-3
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:left;">
-Kate
-</td>
-<td style="text-align:left;">
-Black
-</td>
-<td style="text-align:right;">
-17
+McFreely
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-14
+1
 </td>
+</tr>
+<tr>
 <td style="text-align:right;">
 2
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:left;">
-Beth
-</td>
-<td style="text-align:left;">
-Deutsch
-</td>
-<td style="text-align:right;">
-18
-</td>
-<td style="text-align:right;">
-18
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-16
-</td>
-<td style="text-align:right;">
-12
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:left;">
-Ella
-</td>
-<td style="text-align:left;">
-Foreman
-</td>
-<td style="text-align:right;">
-19
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-6
 </td>
 <td style="text-align:left;">
 Joe
@@ -534,86 +367,41 @@ Joe
 Cherry
 </td>
 <td style="text-align:right;">
-21
+2
 </td>
 <td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-8
+2
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-7
+3
 </td>
 <td style="text-align:left;">
-Richard
+Jonny
 </td>
 <td style="text-align:left;">
-Gribbin
+Law
 </td>
 <td style="text-align:right;">
-23
+3
 </td>
 <td style="text-align:right;">
-11
-</td>
-<td style="text-align:right;">
-16
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-10
+3
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-8
+4
 </td>
 <td style="text-align:left;">
-Kate
+Kleo
 </td>
 <td style="text-align:left;">
-Langley
+Tubaku
 </td>
 <td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-13
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-9
+4
 </td>
 <td style="text-align:right;">
 4
@@ -621,34 +409,87 @@ NA
 </tr>
 <tr>
 <td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Roy
+</td>
+<td style="text-align:left;">
+Bearpark
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Wren
+</td>
+<td style="text-align:left;">
+Langford
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+Emily
+</td>
+<td style="text-align:left;">
+Pass
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Tim
+</td>
+<td style="text-align:left;">
+Cook
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
 9
 </td>
 <td style="text-align:left;">
-David
+Becky
 </td>
 <td style="text-align:left;">
-Webster
+Price
 </td>
 <td style="text-align:right;">
-27
+9
 </td>
 <td style="text-align:right;">
-12
-</td>
-<td style="text-align:right;">
-15
-</td>
-<td style="text-align:right;">
-11
-</td>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-NA
+9
 </td>
 </tr>
 <tr>
@@ -656,31 +497,16 @@ NA
 10
 </td>
 <td style="text-align:left;">
-Alex
+Robert
 </td>
 <td style="text-align:left;">
-Dyter
+Mulligan
 </td>
 <td style="text-align:right;">
-28
+10
 </td>
 <td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-19
-</td>
-<td style="text-align:right;">
-NA
+10
 </td>
 </tr>
 <tr>
@@ -688,31 +514,16 @@ NA
 11
 </td>
 <td style="text-align:left;">
-Vincent
+Aisling
 </td>
 <td style="text-align:left;">
-McCormack
+Eves
 </td>
 <td style="text-align:right;">
-33
+11
 </td>
 <td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-17
-</td>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-9
+11
 </td>
 </tr>
 <tr>
@@ -720,31 +531,271 @@ NA
 12
 </td>
 <td style="text-align:left;">
-Laura
+Izzy
 </td>
 <td style="text-align:left;">
-Falconer
+Chen
 </td>
 <td style="text-align:right;">
-39
+12
 </td>
 <td style="text-align:right;">
-NA
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+Ben
+</td>
+<td style="text-align:left;">
+Morgan
 </td>
 <td style="text-align:right;">
-3
+13
 </td>
 <td style="text-align:right;">
-NA
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+Euan
+</td>
+<td style="text-align:left;">
+Casey
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+Laurence
+</td>
+<td style="text-align:left;">
+White
 </td>
 <td style="text-align:right;">
 15
 </td>
 <td style="text-align:right;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+Hannah
+</td>
+<td style="text-align:left;">
+Fishburn
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:left;">
+Ben
+</td>
+<td style="text-align:left;">
+McMain
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+17
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+Clodagh
+</td>
+<td style="text-align:left;">
+Mitchell
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+Marcus
+</td>
+<td style="text-align:left;">
+Clarke
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+Chris
+</td>
+<td style="text-align:left;">
+Stafford
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:left;">
+Kate
+</td>
+<td style="text-align:left;">
+Winstanley
+</td>
+<td style="text-align:right;">
 21
 </td>
 <td style="text-align:right;">
-NA
+21
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:left;">
+Jane
+</td>
+<td style="text-align:left;">
+Pugh
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+22
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:left;">
+Sabrina
+</td>
+<td style="text-align:left;">
+Rasaiah
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+23
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:left;">
+Lottie
+</td>
+<td style="text-align:left;">
+Rhodes
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:left;">
+Rosie
+</td>
+<td style="text-align:left;">
+England
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:left;">
+Kirsty
+</td>
+<td style="text-align:left;">
+Green
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:left;">
+Kate
+</td>
+<td style="text-align:left;">
+Black
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+27
 </td>
 </tr>
 </tbody>
@@ -767,6 +818,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

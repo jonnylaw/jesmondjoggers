@@ -13,8 +13,9 @@ theme_set(theme_minimal())
 
 ```{r all-results}
 source("scripts/read_results.R")
+
 winter_results = all_results %>% 
-  filter(grepl(pattern = "2018", x = handicap))
+  filter(stringr::str_detect(handicap, "2019"))
 ```
 
 ```{r print_winter_results, results='asis'}

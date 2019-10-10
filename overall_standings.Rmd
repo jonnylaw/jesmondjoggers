@@ -14,10 +14,10 @@ theme_set(theme_minimal())
 ```{r all_results}
 source("scripts/read_results.R")
 winter_results = all_results %>% 
-  filter(grepl(pattern = "2018", x = handicap))
+  filter(stringr::str_detect(handicap, "2019"))
 ```
 
-The overall standings are calculated by summing your best finishing position in three (out of five) races.
+The overall standings are calculated by summing your best finishing position in three races.
 
 ```{r overall-standings}
 total_races = winter_results %>%
@@ -38,12 +38,12 @@ winter_results %>%
   summarise(points = sum(position)) %>%
   inner_join(total_races) %>%
   inner_join(results_by_handicap) %>%
-  filter(total_races >= 3) %>%
+  # filter(total_races >= 3) %>%
   ungroup() %>%
   mutate(position = dplyr::dense_rank(points)) %>%
-  select(position, total_races, first_name, second_name, points, `20181`, `20182`, `20183`, `20184`, `20185`, `20186`) %>%
+  select(position, total_races, first_name, second_name, points, `20191`) %>%
   arrange(position) %>%
   select(-total_races) %>%
-  knitr::kable(format = "html", booktabs = T, col.names = c("Position", "First", "Second", "Points", "Handicap 1", "Handicap 2", "Handicap 3", "Handicap 4", "Handicap 5", "Handicap 6")) %>% 
+  knitr::kable(format = "html", booktabs = T, col.names = c("Position", "First", "Second", "Points", "Handicap 1")) %>% 
   kable_styling(latex_options = "striped")
 ```

@@ -14,12 +14,17 @@ theme_set(theme_minimal())
 ```{r all_results}
 source("scripts/read_results.R")
 winter_results = all_results %>% 
-  filter(grepl(pattern = "2018", x = handicap))
+  filter(grepl(pattern = "2019", x = handicap))
 ```
+
+## Jesmond Dene Course
+
+These are the fastest times this season on the [Jesmond Dene Course](https://www.strava.com/segments/20074721?filter=overall).
 
 ```{r fastest-times}
 winter_results %>%
-  group_by(sex, handicap) %>%
+  filter(course == "jesmond dene") %>% 
+  group_by(sex) %>%
   top_n(3, wt = desc(running_time)) %>%
   ungroup() %>%
   select(sex, handicap, first_name, second_name, running_time) %>%
