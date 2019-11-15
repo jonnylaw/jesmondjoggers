@@ -1,0 +1,57 @@
+---
+title: "Handicaps"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(kableExtra)
+library(lubridate)
+```
+
+```{r all_results}
+source("scripts/read_results.R")
+```
+
+```{r best-results, results='asis'}
+best_results = all_results %>%
+  filter(handicap >= 20191) %>% 
+  mutate(time = running_time) %>%
+  group_by(first_name, second_name) %>%
+  summarise(time = min(time))
+
+best_results$pretty_time = lubridate::seconds_to_period(best_results$time)
+```
+
+```{r calculate-new-handicaps}
+# Calculate the longest run of all runs
+longest_run = max(best_results$time, na.rm = T)
+
+# Calculate new handicaps
+new_handicaps = best_results %>%
+  mutate(new_handicap_raw = longest_run - time) %>%
+  mutate(new_handicap = new_handicap_raw - new_handicap_raw %% 30) %>% 
+  drop_na() %>%
+  rowwise() %>%
+  # mutate(new_handicap = lubridate::round_date(x = new_handicap_raw, unit = "30 seconds")) %>%
+  # mutate(group = cut(new_handicap_raw, breaks = c(0, 360, 520, 1000), labels = 1:3, include.lowest = T)) %>%
+  select(first_name, second_name, new_handicap) %>%
+  arrange(new_handicap)
+
+new_handicaps$new_handicap = seconds_to_period(new_handicaps$new_handicap)
+# new_handicaps$new_handicap_raw = seconds_to_period(new_handicaps$new_handicap_raw)
+```
+
+```{r}
+new_handicaps %>% 
+  write_csv("~/Desktop/new_handicaps.csv")
+```
+
+
+```{r display-new-handicaps}
+# Display new handicaps by time
+new_handicaps %>%
+  knitr::kable(format = "html", booktabs = T, col.names = c("First", "Second", "Handicap")) %>% 
+  kable_styling(latex_options = "striped")
+```

@@ -28,7 +28,7 @@ winter_results %>%
   top_n(3, wt = desc(running_time)) %>%
   ungroup() %>%
   select(sex, handicap, first_name, second_name, running_time) %>%
-  arrange(sex, handicap, running_time) %>%
+  arrange(sex, running_time) %>%
   mutate(running_time = seconds_to_period(running_time)) %>%
   knitr::kable(format = "html", booktabs = T, col.names = c("Sex", "Race", "First", "Second", "Time")) %>% 
   kable_styling(latex_options = "striped")
