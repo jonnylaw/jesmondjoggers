@@ -1,4 +1,4 @@
-﻿position,first_name,second_name,sex,gross_time,running_time,handicap,course
+position,first_name,second_name,sex,gross_time,running_time,handicap,course
 1,David ,Newman ,M,21:57,21:57,3,jesmond dene
 2,Paul,Waddell ,M,23:45,17:15,3,jesmond dene
 3,Jaide,Moss,F,24:18,24:18,3,jesmond dene
@@ -16,7 +16,7 @@
 15,Ben,Morgan,M,25:19,15:49,3,jesmond dene
 16,Kate,Winstanley,F,25:23,21:53,3,jesmond dene
 17,Robert,Mulligan,M,25:30,17:00,3,jesmond dene
-18,Dan,McFreely,M,25:41,17:11,3,jesmond dene
+18,Dan,McFeely,M,25:41,17:11,3,jesmond dene
 19,Matt,Purvis,M,25:43,18:13,3,jesmond dene
 20,Eilidh,Paul,F,25:45,21:15,3,jesmond dene
 21,Kleo,Tabaku,M,26:00,16:00,3,jesmond dene
