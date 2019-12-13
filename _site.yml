@@ -14,6 +14,8 @@ navbar:
       href: fastest_times.html
     - text: Overall Standings
       href: overall_standings.html
+    - text: Handicaps
+      href: handicaps.html
 output:
   html_document:
     theme: cerulean
