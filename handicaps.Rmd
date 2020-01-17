@@ -42,7 +42,7 @@ new_handicaps %>%
 
 ## Handicap Little Moor
 
-```{r calculate-new-handicaps}
+```{r calculate-new-handicaps-moor}
 new_handicaps <- get_new_handicaps(all_results %>% 
                                      filter(handicap >= 20191, course == "little moor"), min)
 ```
@@ -51,7 +51,7 @@ new_handicaps <- get_new_handicaps(all_results %>%
 new_handicaps$new_handicap = seconds_to_period(new_handicaps$new_handicap)
 ```
 
-```{r display-new-handicaps}
+```{r display-new-handicaps-moor}
 # Display new handicaps by time
 new_handicaps %>%
   knitr::kable(format = "html", booktabs = T, col.names = c("First", "Second", "Handicap")) %>% 
