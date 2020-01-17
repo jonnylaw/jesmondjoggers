@@ -22,8 +22,29 @@ current_handicaps <- calculate_handicaps() %>%
   .$handicap
 ```
 
+## Handicap Dene
+
 ```{r calculate-new-handicaps}
-new_handicaps <- get_new_handicaps(all_results %>% filter(handicap >= 201901), min)
+new_handicaps <- get_new_handicaps(all_results %>% 
+                                     filter(handicap >= 20191, course == "jesmond dene"), min)
+```
+
+```{r}
+new_handicaps$new_handicap = seconds_to_period(new_handicaps$new_handicap)
+```
+
+```{r display-new-handicaps}
+# Display new handicaps by time
+new_handicaps %>%
+  knitr::kable(format = "html", booktabs = T, col.names = c("First", "Second", "Handicap")) %>% 
+  kable_styling(latex_options = "striped")
+```
+
+## Handicap Little Moor
+
+```{r calculate-new-handicaps}
+new_handicaps <- get_new_handicaps(all_results %>% 
+                                     filter(handicap >= 20191, course == "little moor"), min)
 ```
 
 ```{r}
