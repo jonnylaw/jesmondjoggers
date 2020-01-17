@@ -17,5 +17,6 @@ Imports:
     readr,
     stringr,
     purrr,
-    magrittr
+    magrittr,
+    kableExtra
 RoxygenNote: 7.0.2

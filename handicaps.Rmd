@@ -5,13 +5,14 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
-library(tidyverse)
+library(jjshandicap)
+library(dplyr)
 library(kableExtra)
 library(lubridate)
 ```
 
 ```{r all_results}
-all_results <- read_rds("data/all_results.Rds")
+all_results <- readr::read_rds("data/all_results.Rds")
 ```
 
 ```{r five-k-to-handicap}
