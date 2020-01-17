@@ -1,0 +1,3133 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Results</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Jesmond Joggers Grand Prix</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Winter Grand Prix 2018/19
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="results.html">Results</a>
+    </li>
+    <li>
+      <a href="fastest_times.html">Fastest Times</a>
+    </li>
+    <li>
+      <a href="overall_standings.html">Overall Standings</a>
+    </li>
+    <li>
+      <a href="handicaps.html">Handicaps</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Results</h1>
+
+</div>
+
+
+$<code>20191</code>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Handicap
+</th>
+<th style="text-align:right;">
+Position
+</th>
+<th style="text-align:left;">
+First
+</th>
+<th style="text-align:left;">
+Seconds
+</th>
+<th style="text-align:right;">
+Race Time
+</th>
+<th style="text-align:right;">
+Running Time
+</th>
+<th style="text-align:right;">
+Handicap Time
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Dan
+</td>
+<td style="text-align:left;">
+McFeely
+</td>
+<td style="text-align:right;">
+18M 59S
+</td>
+<td style="text-align:right;">
+18M 59S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Joe
+</td>
+<td style="text-align:left;">
+Cherry
+</td>
+<td style="text-align:right;">
+19M 57S
+</td>
+<td style="text-align:right;">
+14M 57S
+</td>
+<td style="text-align:right;">
+5M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Jonny
+</td>
+<td style="text-align:left;">
+Law
+</td>
+<td style="text-align:right;">
+20M 1S
+</td>
+<td style="text-align:right;">
+15M 1S
+</td>
+<td style="text-align:right;">
+5M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Kleo
+</td>
+<td style="text-align:left;">
+Tabaku
+</td>
+<td style="text-align:right;">
+20M 38S
+</td>
+<td style="text-align:right;">
+15M 38S
+</td>
+<td style="text-align:right;">
+5M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Roy
+</td>
+<td style="text-align:left;">
+Bearpark
+</td>
+<td style="text-align:right;">
+20M 38S
+</td>
+<td style="text-align:right;">
+18M 38S
+</td>
+<td style="text-align:right;">
+2M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Wren
+</td>
+<td style="text-align:left;">
+Langford
+</td>
+<td style="text-align:right;">
+20M 39S
+</td>
+<td style="text-align:right;">
+20M 39S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+Emily
+</td>
+<td style="text-align:left;">
+Pass
+</td>
+<td style="text-align:right;">
+20M 52S
+</td>
+<td style="text-align:right;">
+20M 52S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Tim
+</td>
+<td style="text-align:left;">
+Cook
+</td>
+<td style="text-align:right;">
+20M 54S
+</td>
+<td style="text-align:right;">
+18M 54S
+</td>
+<td style="text-align:right;">
+2M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+Becky
+</td>
+<td style="text-align:left;">
+Price
+</td>
+<td style="text-align:right;">
+20M 55S
+</td>
+<td style="text-align:right;">
+18M 55S
+</td>
+<td style="text-align:right;">
+2M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Robert
+</td>
+<td style="text-align:left;">
+Mulligan
+</td>
+<td style="text-align:right;">
+21M 1S
+</td>
+<td style="text-align:right;">
+17M 1S
+</td>
+<td style="text-align:right;">
+4M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+Aisling
+</td>
+<td style="text-align:left;">
+Eves
+</td>
+<td style="text-align:right;">
+21M 9S
+</td>
+<td style="text-align:right;">
+19M 9S
+</td>
+<td style="text-align:right;">
+2M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+Izzy
+</td>
+<td style="text-align:left;">
+Chen
+</td>
+<td style="text-align:right;">
+21M 12S
+</td>
+<td style="text-align:right;">
+21M 12S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+Ben
+</td>
+<td style="text-align:left;">
+Morgan
+</td>
+<td style="text-align:right;">
+21M 2S
+</td>
+<td style="text-align:right;">
+16M 2S
+</td>
+<td style="text-align:right;">
+5M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+Euan
+</td>
+<td style="text-align:left;">
+Casey
+</td>
+<td style="text-align:right;">
+21M 22S
+</td>
+<td style="text-align:right;">
+17M 22S
+</td>
+<td style="text-align:right;">
+4M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+Laurence
+</td>
+<td style="text-align:left;">
+White
+</td>
+<td style="text-align:right;">
+21M 24S
+</td>
+<td style="text-align:right;">
+17M 24S
+</td>
+<td style="text-align:right;">
+4M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+Hannah
+</td>
+<td style="text-align:left;">
+Fishburn
+</td>
+<td style="text-align:right;">
+21M 3S
+</td>
+<td style="text-align:right;">
+21M 3S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:left;">
+Ben
+</td>
+<td style="text-align:left;">
+McMain
+</td>
+<td style="text-align:right;">
+21M 36S
+</td>
+<td style="text-align:right;">
+16M 36S
+</td>
+<td style="text-align:right;">
+5M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+Clodagh
+</td>
+<td style="text-align:left;">
+Mitchell
+</td>
+<td style="text-align:right;">
+21M 47S
+</td>
+<td style="text-align:right;">
+19M 47S
+</td>
+<td style="text-align:right;">
+2M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+Marcus
+</td>
+<td style="text-align:left;">
+Clarke
+</td>
+<td style="text-align:right;">
+21M 57S
+</td>
+<td style="text-align:right;">
+17M 57S
+</td>
+<td style="text-align:right;">
+4M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+Chris
+</td>
+<td style="text-align:left;">
+Stafford
+</td>
+<td style="text-align:right;">
+22M 2S
+</td>
+<td style="text-align:right;">
+22M 2S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:left;">
+Kate
+</td>
+<td style="text-align:left;">
+Winstanley
+</td>
+<td style="text-align:right;">
+22M 15S
+</td>
+<td style="text-align:right;">
+22M 15S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:left;">
+Jane
+</td>
+<td style="text-align:left;">
+Pugh
+</td>
+<td style="text-align:right;">
+22M 17S
+</td>
+<td style="text-align:right;">
+18M 17S
+</td>
+<td style="text-align:right;">
+4M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:left;">
+Sabrina
+</td>
+<td style="text-align:left;">
+Rasaiah
+</td>
+<td style="text-align:right;">
+22M 22S
+</td>
+<td style="text-align:right;">
+22M 22S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:left;">
+Lottie
+</td>
+<td style="text-align:left;">
+Rhodes
+</td>
+<td style="text-align:right;">
+22M 38S
+</td>
+<td style="text-align:right;">
+20M 38S
+</td>
+<td style="text-align:right;">
+2M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:left;">
+Rosie
+</td>
+<td style="text-align:left;">
+England
+</td>
+<td style="text-align:right;">
+23M 24S
+</td>
+<td style="text-align:right;">
+23M 24S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:left;">
+Kirsty
+</td>
+<td style="text-align:left;">
+Green
+</td>
+<td style="text-align:right;">
+23M 25S
+</td>
+<td style="text-align:right;">
+21M 25S
+</td>
+<td style="text-align:right;">
+2M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20191
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:left;">
+Kate
+</td>
+<td style="text-align:left;">
+Black
+</td>
+<td style="text-align:right;">
+25M 0S
+</td>
+<td style="text-align:right;">
+21M 0S
+</td>
+<td style="text-align:right;">
+4M 0S
+</td>
+</tr>
+</tbody>
+</table>
+$<code>20192</code>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Handicap
+</th>
+<th style="text-align:right;">
+Position
+</th>
+<th style="text-align:left;">
+First
+</th>
+<th style="text-align:left;">
+Seconds
+</th>
+<th style="text-align:right;">
+Race Time
+</th>
+<th style="text-align:right;">
+Running Time
+</th>
+<th style="text-align:right;">
+Handicap Time
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Dan
+</td>
+<td style="text-align:left;">
+McFeely
+</td>
+<td style="text-align:right;">
+20M 20S
+</td>
+<td style="text-align:right;">
+17M 20S
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Alex
+</td>
+<td style="text-align:left;">
+Dyter
+</td>
+<td style="text-align:right;">
+20M 42S
+</td>
+<td style="text-align:right;">
+17M 42S
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Jamie
+</td>
+<td style="text-align:left;">
+Thompson
+</td>
+<td style="text-align:right;">
+20M 52S
+</td>
+<td style="text-align:right;">
+17M 52S
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Matt
+</td>
+<td style="text-align:left;">
+Purvis
+</td>
+<td style="text-align:right;">
+21M 5S
+</td>
+<td style="text-align:right;">
+18M 5S
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Amy
+</td>
+<td style="text-align:left;">
+R
+</td>
+<td style="text-align:right;">
+21M 12S
+</td>
+<td style="text-align:right;">
+19M 42S
+</td>
+<td style="text-align:right;">
+1M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Hannah
+</td>
+<td style="text-align:left;">
+Marshall
+</td>
+<td style="text-align:right;">
+21M 36S
+</td>
+<td style="text-align:right;">
+18M 36S
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+Sam
+</td>
+<td style="text-align:left;">
+Steele
+</td>
+<td style="text-align:right;">
+21M 42S
+</td>
+<td style="text-align:right;">
+15M 12S
+</td>
+<td style="text-align:right;">
+6M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+David
+</td>
+<td style="text-align:left;">
+Webster
+</td>
+<td style="text-align:right;">
+21M 45S
+</td>
+<td style="text-align:right;">
+15M 15S
+</td>
+<td style="text-align:right;">
+6M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+Ben
+</td>
+<td style="text-align:left;">
+McMain
+</td>
+<td style="text-align:right;">
+21M 53S
+</td>
+<td style="text-align:right;">
+16M 23S
+</td>
+<td style="text-align:right;">
+5M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Alex
+</td>
+<td style="text-align:left;">
+Ramshaw
+</td>
+<td style="text-align:right;">
+21M 55S
+</td>
+<td style="text-align:right;">
+18M 55S
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+Emily
+</td>
+<td style="text-align:left;">
+Pass
+</td>
+<td style="text-align:right;">
+22M 6S
+</td>
+<td style="text-align:right;">
+20M 36S
+</td>
+<td style="text-align:right;">
+1M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+Kleo
+</td>
+<td style="text-align:left;">
+Tabaku
+</td>
+<td style="text-align:right;">
+22M 7S
+</td>
+<td style="text-align:right;">
+15M 37S
+</td>
+<td style="text-align:right;">
+6M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+Aisling
+</td>
+<td style="text-align:left;">
+Eves
+</td>
+<td style="text-align:right;">
+22M 8S
+</td>
+<td style="text-align:right;">
+19M 8S
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+Beth
+</td>
+<td style="text-align:left;">
+Deutsch
+</td>
+<td style="text-align:right;">
+22M 10S
+</td>
+<td style="text-align:right;">
+21M 10S
+</td>
+<td style="text-align:right;">
+1M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+Molly
+</td>
+<td style="text-align:left;">
+Pace
+</td>
+<td style="text-align:right;">
+22M 20S
+</td>
+<td style="text-align:right;">
+16M 50S
+</td>
+<td style="text-align:right;">
+5M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+Sabrina
+</td>
+<td style="text-align:left;">
+Rasaiah
+</td>
+<td style="text-align:right;">
+22M 30S
+</td>
+<td style="text-align:right;">
+22M 30S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:left;">
+Sabrina
+</td>
+<td style="text-align:left;">
+Kapur
+</td>
+<td style="text-align:right;">
+22M 31S
+</td>
+<td style="text-align:right;">
+19M 31S
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+Thomas
+</td>
+<td style="text-align:left;">
+von Rockenstrocly
+</td>
+<td style="text-align:right;">
+22M 34S
+</td>
+<td style="text-align:right;">
+22M 34S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+Lottie
+</td>
+<td style="text-align:left;">
+Rhodes
+</td>
+<td style="text-align:right;">
+22M 35S
+</td>
+<td style="text-align:right;">
+20M 5S
+</td>
+<td style="text-align:right;">
+2M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+Fionnuala
+</td>
+<td style="text-align:left;">
+Reedy
+</td>
+<td style="text-align:right;">
+23M 4S
+</td>
+<td style="text-align:right;">
+21M 34S
+</td>
+<td style="text-align:right;">
+1M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:left;">
+Paul
+</td>
+<td style="text-align:left;">
+Webster
+</td>
+<td style="text-align:right;">
+24M 29S
+</td>
+<td style="text-align:right;">
+18M 59S
+</td>
+<td style="text-align:right;">
+5M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:left;">
+Izzy
+</td>
+<td style="text-align:left;">
+Chen
+</td>
+<td style="text-align:right;">
+24M 29S
+</td>
+<td style="text-align:right;">
+23M 29S
+</td>
+<td style="text-align:right;">
+1M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:left;">
+Megan
+</td>
+<td style="text-align:left;">
+Ayling
+</td>
+<td style="text-align:right;">
+25M 44S
+</td>
+<td style="text-align:right;">
+22M 44S
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:left;">
+Jill
+</td>
+<td style="text-align:left;">
+O’Donald
+</td>
+<td style="text-align:right;">
+25M 41S
+</td>
+<td style="text-align:right;">
+25M 41S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20192
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:left;">
+Jaide
+</td>
+<td style="text-align:left;">
+Moss
+</td>
+<td style="text-align:right;">
+25M 50S
+</td>
+<td style="text-align:right;">
+25M 50S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+</tbody>
+</table>
+$<code>20193</code>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Handicap
+</th>
+<th style="text-align:right;">
+Position
+</th>
+<th style="text-align:left;">
+First
+</th>
+<th style="text-align:left;">
+Seconds
+</th>
+<th style="text-align:right;">
+Race Time
+</th>
+<th style="text-align:right;">
+Running Time
+</th>
+<th style="text-align:right;">
+Handicap Time
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+David
+</td>
+<td style="text-align:left;">
+Newman
+</td>
+<td style="text-align:right;">
+21M 57S
+</td>
+<td style="text-align:right;">
+21M 57S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Paul
+</td>
+<td style="text-align:left;">
+Waddell
+</td>
+<td style="text-align:right;">
+23M 45S
+</td>
+<td style="text-align:right;">
+17M 15S
+</td>
+<td style="text-align:right;">
+6M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Jaide
+</td>
+<td style="text-align:left;">
+Moss
+</td>
+<td style="text-align:right;">
+24M 18S
+</td>
+<td style="text-align:right;">
+24M 18S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Rob
+</td>
+<td style="text-align:left;">
+Willers
+</td>
+<td style="text-align:right;">
+24M 37S
+</td>
+<td style="text-align:right;">
+16M 37S
+</td>
+<td style="text-align:right;">
+8M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Alex
+</td>
+<td style="text-align:left;">
+Dyter
+</td>
+<td style="text-align:right;">
+24M 39S
+</td>
+<td style="text-align:right;">
+16M 39S
+</td>
+<td style="text-align:right;">
+8M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Jamie
+</td>
+<td style="text-align:left;">
+Thompson
+</td>
+<td style="text-align:right;">
+24M 47S
+</td>
+<td style="text-align:right;">
+17M 17S
+</td>
+<td style="text-align:right;">
+7M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+Fionnuala
+</td>
+<td style="text-align:left;">
+Reedy
+</td>
+<td style="text-align:right;">
+24M 51S
+</td>
+<td style="text-align:right;">
+20M 51S
+</td>
+<td style="text-align:right;">
+4M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Emily
+</td>
+<td style="text-align:left;">
+Pass
+</td>
+<td style="text-align:right;">
+24M 52S
+</td>
+<td style="text-align:right;">
+19M 52S
+</td>
+<td style="text-align:right;">
+5M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+Becky
+</td>
+<td style="text-align:left;">
+Price
+</td>
+<td style="text-align:right;">
+24M 55S
+</td>
+<td style="text-align:right;">
+18M 25S
+</td>
+<td style="text-align:right;">
+6M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Andrew
+</td>
+<td style="text-align:left;">
+Diver
+</td>
+<td style="text-align:right;">
+24M 57S
+</td>
+<td style="text-align:right;">
+19M 27S
+</td>
+<td style="text-align:right;">
+5M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+Matthias
+</td>
+<td style="text-align:left;">
+Winkle
+</td>
+<td style="text-align:right;">
+25M 11S
+</td>
+<td style="text-align:right;">
+17M 11S
+</td>
+<td style="text-align:right;">
+8M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+Paul
+</td>
+<td style="text-align:left;">
+Inch
+</td>
+<td style="text-align:right;">
+25M 15S
+</td>
+<td style="text-align:right;">
+19M 45S
+</td>
+<td style="text-align:right;">
+5M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+Roy
+</td>
+<td style="text-align:left;">
+Bearpark
+</td>
+<td style="text-align:right;">
+25M 16S
+</td>
+<td style="text-align:right;">
+18M 16S
+</td>
+<td style="text-align:right;">
+7M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+Ben
+</td>
+<td style="text-align:left;">
+McMain
+</td>
+<td style="text-align:right;">
+25M 18S
+</td>
+<td style="text-align:right;">
+16M 18S
+</td>
+<td style="text-align:right;">
+9M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+Ben
+</td>
+<td style="text-align:left;">
+Morgan
+</td>
+<td style="text-align:right;">
+25M 19S
+</td>
+<td style="text-align:right;">
+15M 49S
+</td>
+<td style="text-align:right;">
+9M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+Kate
+</td>
+<td style="text-align:left;">
+Winstanley
+</td>
+<td style="text-align:right;">
+25M 23S
+</td>
+<td style="text-align:right;">
+21M 53S
+</td>
+<td style="text-align:right;">
+3M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:left;">
+Robert
+</td>
+<td style="text-align:left;">
+Mulligan
+</td>
+<td style="text-align:right;">
+25M 30S
+</td>
+<td style="text-align:right;">
+17M 0S
+</td>
+<td style="text-align:right;">
+8M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+Dan
+</td>
+<td style="text-align:left;">
+McFeely
+</td>
+<td style="text-align:right;">
+25M 41S
+</td>
+<td style="text-align:right;">
+17M 11S
+</td>
+<td style="text-align:right;">
+8M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+Matt
+</td>
+<td style="text-align:left;">
+Purvis
+</td>
+<td style="text-align:right;">
+25M 43S
+</td>
+<td style="text-align:right;">
+18M 13S
+</td>
+<td style="text-align:right;">
+7M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+Eilidh
+</td>
+<td style="text-align:left;">
+Paul
+</td>
+<td style="text-align:right;">
+25M 45S
+</td>
+<td style="text-align:right;">
+21M 15S
+</td>
+<td style="text-align:right;">
+4M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:left;">
+Kleo
+</td>
+<td style="text-align:left;">
+Tabaku
+</td>
+<td style="text-align:right;">
+26M 0S
+</td>
+<td style="text-align:right;">
+16M 0S
+</td>
+<td style="text-align:right;">
+10M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:left;">
+Megan
+</td>
+<td style="text-align:left;">
+Holmes
+</td>
+<td style="text-align:right;">
+26M 11S
+</td>
+<td style="text-align:right;">
+19M 41S
+</td>
+<td style="text-align:right;">
+6M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:left;">
+Beth
+</td>
+<td style="text-align:left;">
+Deutsch
+</td>
+<td style="text-align:right;">
+26M 41S
+</td>
+<td style="text-align:right;">
+22M 11S
+</td>
+<td style="text-align:right;">
+4M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:left;">
+Lottie
+</td>
+<td style="text-align:left;">
+Rhodes
+</td>
+<td style="text-align:right;">
+26M 43S
+</td>
+<td style="text-align:right;">
+21M 13S
+</td>
+<td style="text-align:right;">
+5M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20193
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:left;">
+David
+</td>
+<td style="text-align:left;">
+Webster
+</td>
+<td style="text-align:right;">
+26M 55S
+</td>
+<td style="text-align:right;">
+16M 25S
+</td>
+<td style="text-align:right;">
+10M 30S
+</td>
+</tr>
+</tbody>
+</table>
+$<code>20194</code>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Handicap
+</th>
+<th style="text-align:right;">
+Position
+</th>
+<th style="text-align:left;">
+First
+</th>
+<th style="text-align:left;">
+Seconds
+</th>
+<th style="text-align:right;">
+Race Time
+</th>
+<th style="text-align:right;">
+Running Time
+</th>
+<th style="text-align:right;">
+Handicap Time
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Megan
+</td>
+<td style="text-align:left;">
+Ayling
+</td>
+<td style="text-align:right;">
+17M 27S
+</td>
+<td style="text-align:right;">
+15M 57S
+</td>
+<td style="text-align:right;">
+1M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Maddy
+</td>
+<td style="text-align:left;">
+Winnard
+</td>
+<td style="text-align:right;">
+17M 28S
+</td>
+<td style="text-align:right;">
+15M 58S
+</td>
+<td style="text-align:right;">
+1M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Chris
+</td>
+<td style="text-align:left;">
+Small
+</td>
+<td style="text-align:right;">
+18M 39S
+</td>
+<td style="text-align:right;">
+18M 39S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Matt
+</td>
+<td style="text-align:left;">
+Larkin
+</td>
+<td style="text-align:right;">
+18M 46S
+</td>
+<td style="text-align:right;">
+17M 16S
+</td>
+<td style="text-align:right;">
+1M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Sam
+</td>
+<td style="text-align:left;">
+Hunter
+</td>
+<td style="text-align:right;">
+18M 53S
+</td>
+<td style="text-align:right;">
+18M 53S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Phil
+</td>
+<td style="text-align:left;">
+Forster
+</td>
+<td style="text-align:right;">
+19M 2S
+</td>
+<td style="text-align:right;">
+15M 32S
+</td>
+<td style="text-align:right;">
+3M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+Kate
+</td>
+<td style="text-align:left;">
+Black
+</td>
+<td style="text-align:right;">
+19M 16S
+</td>
+<td style="text-align:right;">
+15M 46S
+</td>
+<td style="text-align:right;">
+3M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+Jaide
+</td>
+<td style="text-align:left;">
+Moss
+</td>
+<td style="text-align:right;">
+19M 27S
+</td>
+<td style="text-align:right;">
+19M 27S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+Kate
+</td>
+<td style="text-align:left;">
+Winstanley
+</td>
+<td style="text-align:right;">
+19M 52S
+</td>
+<td style="text-align:right;">
+17M 22S
+</td>
+<td style="text-align:right;">
+2M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+Andrew
+</td>
+<td style="text-align:left;">
+Diver
+</td>
+<td style="text-align:right;">
+19M 57S
+</td>
+<td style="text-align:right;">
+14M 57S
+</td>
+<td style="text-align:right;">
+5M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+Fionnuala
+</td>
+<td style="text-align:left;">
+Reedy
+</td>
+<td style="text-align:right;">
+20M 7S
+</td>
+<td style="text-align:right;">
+16M 37S
+</td>
+<td style="text-align:right;">
+3M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+Beth
+</td>
+<td style="text-align:left;">
+Deutsch
+</td>
+<td style="text-align:right;">
+20M 14S
+</td>
+<td style="text-align:right;">
+16M 44S
+</td>
+<td style="text-align:right;">
+3M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+Izzy
+</td>
+<td style="text-align:left;">
+Chen
+</td>
+<td style="text-align:right;">
+20M 19S
+</td>
+<td style="text-align:right;">
+17M 19S
+</td>
+<td style="text-align:right;">
+3M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+Emily
+</td>
+<td style="text-align:left;">
+Pass
+</td>
+<td style="text-align:right;">
+20M 23S
+</td>
+<td style="text-align:right;">
+15M 53S
+</td>
+<td style="text-align:right;">
+4M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:left;">
+Marcus
+</td>
+<td style="text-align:left;">
+Clarke
+</td>
+<td style="text-align:right;">
+20M 25S
+</td>
+<td style="text-align:right;">
+13M 55S
+</td>
+<td style="text-align:right;">
+6M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+Paul
+</td>
+<td style="text-align:left;">
+Waddell
+</td>
+<td style="text-align:right;">
+20M 34S
+</td>
+<td style="text-align:right;">
+13M 34S
+</td>
+<td style="text-align:right;">
+7M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:left;">
+Jamie
+</td>
+<td style="text-align:left;">
+Thompson
+</td>
+<td style="text-align:right;">
+20M 41S
+</td>
+<td style="text-align:right;">
+13M 41S
+</td>
+<td style="text-align:right;">
+7M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+Matt
+</td>
+<td style="text-align:left;">
+Purvis
+</td>
+<td style="text-align:right;">
+20M 47S
+</td>
+<td style="text-align:right;">
+14M 17S
+</td>
+<td style="text-align:right;">
+6M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+Ella
+</td>
+<td style="text-align:left;">
+Foreman
+</td>
+<td style="text-align:right;">
+20M 56S
+</td>
+<td style="text-align:right;">
+14M 26S
+</td>
+<td style="text-align:right;">
+6M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+Alice
+</td>
+<td style="text-align:left;">
+Coomer
+</td>
+<td style="text-align:right;">
+20M 58S
+</td>
+<td style="text-align:right;">
+20M 58S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:left;">
+Becky
+</td>
+<td style="text-align:left;">
+Price
+</td>
+<td style="text-align:right;">
+21M 4S
+</td>
+<td style="text-align:right;">
+15M 4S
+</td>
+<td style="text-align:right;">
+6M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:left;">
+Aisling
+</td>
+<td style="text-align:left;">
+Eves
+</td>
+<td style="text-align:right;">
+21M 10S
+</td>
+<td style="text-align:right;">
+15M 40S
+</td>
+<td style="text-align:right;">
+5M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:left;">
+Jayne
+</td>
+<td style="text-align:left;">
+Pugh
+</td>
+<td style="text-align:right;">
+21M 31S
+</td>
+<td style="text-align:right;">
+15M 1S
+</td>
+<td style="text-align:right;">
+6M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:left;">
+Leah
+</td>
+<td style="text-align:left;">
+Kindleyside
+</td>
+<td style="text-align:right;">
+21M 13S
+</td>
+<td style="text-align:right;">
+17M 43S
+</td>
+<td style="text-align:right;">
+3M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:left;">
+Chris
+</td>
+<td style="text-align:left;">
+Laurence
+</td>
+<td style="text-align:right;">
+21M 17S
+</td>
+<td style="text-align:right;">
+13M 17S
+</td>
+<td style="text-align:right;">
+8M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:left;">
+Alex
+</td>
+<td style="text-align:left;">
+Dyter
+</td>
+<td style="text-align:right;">
+21M 29S
+</td>
+<td style="text-align:right;">
+13M 29S
+</td>
+<td style="text-align:right;">
+8M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:left;">
+Jonny
+</td>
+<td style="text-align:left;">
+Law
+</td>
+<td style="text-align:right;">
+21M 30S
+</td>
+<td style="text-align:right;">
+12M 0S
+</td>
+<td style="text-align:right;">
+9M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:left;">
+Cliff
+</td>
+<td style="text-align:left;">
+Veitch
+</td>
+<td style="text-align:right;">
+21M 33S
+</td>
+<td style="text-align:right;">
+14M 33S
+</td>
+<td style="text-align:right;">
+7M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:left;">
+David
+</td>
+<td style="text-align:left;">
+Webster
+</td>
+<td style="text-align:right;">
+21M 35S
+</td>
+<td style="text-align:right;">
+12M 35S
+</td>
+<td style="text-align:right;">
+9M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:left;">
+Ben
+</td>
+<td style="text-align:left;">
+Morgan
+</td>
+<td style="text-align:right;">
+21M 37S
+</td>
+<td style="text-align:right;">
+13M 7S
+</td>
+<td style="text-align:right;">
+8M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:left;">
+Joe
+</td>
+<td style="text-align:left;">
+Cherry
+</td>
+<td style="text-align:right;">
+21M 38S
+</td>
+<td style="text-align:right;">
+12M 8S
+</td>
+<td style="text-align:right;">
+9M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:left;">
+Hannah
+</td>
+<td style="text-align:left;">
+Wilkins
+</td>
+<td style="text-align:right;">
+21M 41S
+</td>
+<td style="text-align:right;">
+21M 41S
+</td>
+<td style="text-align:right;">
+0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:left;">
+Rob
+</td>
+<td style="text-align:left;">
+Willers
+</td>
+<td style="text-align:right;">
+21M 42S
+</td>
+<td style="text-align:right;">
+13M 42S
+</td>
+<td style="text-align:right;">
+8M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:left;">
+Dan
+</td>
+<td style="text-align:left;">
+McFeely
+</td>
+<td style="text-align:right;">
+21M 53S
+</td>
+<td style="text-align:right;">
+14M 23S
+</td>
+<td style="text-align:right;">
+7M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:left;">
+Matt
+</td>
+<td style="text-align:left;">
+Bell
+</td>
+<td style="text-align:right;">
+21M 58S
+</td>
+<td style="text-align:right;">
+14M 58S
+</td>
+<td style="text-align:right;">
+7M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:left;">
+Otis
+</td>
+<td style="text-align:left;">
+Murdoch
+</td>
+<td style="text-align:right;">
+22M 1S
+</td>
+<td style="text-align:right;">
+15M 1S
+</td>
+<td style="text-align:right;">
+7M 0S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:left;">
+Greg
+</td>
+<td style="text-align:left;">
+Stamp
+</td>
+<td style="text-align:right;">
+22M 6S
+</td>
+<td style="text-align:right;">
+14M 36S
+</td>
+<td style="text-align:right;">
+7M 30S
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20194
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:left;">
+Matthias
+</td>
+<td style="text-align:left;">
+Winkle
+</td>
+<td style="text-align:right;">
+22M 8S
+</td>
+<td style="text-align:right;">
+14M 38S
+</td>
+<td style="text-align:right;">
+7M 30S
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

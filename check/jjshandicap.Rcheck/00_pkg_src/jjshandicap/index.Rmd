@@ -1,0 +1,50 @@
+---
+title: "Jesmond Joggers Grand Prix"
+output: html_document
+---
+
+This is the homepage for the Jesmond Joggers Grand Prix, an annual race series running in the Winter from October to April each year.
+
+## Race Dates
+
+1. Oct 8th 2019, [course map](https://www.strava.com/segments/20074721?filter=overall).
+2. Nov 13th 2019, 
+3. Dec 11th 2019
+4. Jan 15th 2020
+5. Feb 12th 2020
+6. Mar 11th 2020
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning=FALSE)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(lubridate)
+theme_set(theme_minimal())
+```
+
+## Latest Results
+
+```{r all-results}
+source("scripts/read_results.R")
+```
+
+```{r latest-results}
+last_handicap = max(all_results$handicap)
+```
+
+Here are the results from handicap `r last_handicap`
+
+```{r display-latest-results}
+all_results %>%
+  select(handicap, position, first_name, second_name, gross_time, running_time, handicap_time) %>% 
+  arrange(handicap, position) %>%
+  filter(handicap == last_handicap) %>%
+  mutate(gross_time = lubridate::seconds_to_period(gross_time), 
+         running_time = lubridate::seconds_to_period(running_time), 
+         handicap_time = lubridate::seconds_to_period(handicap_time)) %>%
+  knitr::kable(format = "html", booktabs = T, col.names = c("Handicap", "Position", "First",
+                                           "Seconds", "Race Time", "Running Time", "Handicap Time")) %>% 
+  kable_styling(latex_options = "striped")
+```
+

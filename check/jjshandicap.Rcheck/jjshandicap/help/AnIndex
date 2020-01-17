@@ -1,0 +1,7 @@
+%>%	pipe
+calculate_handicaps	calculate_handicaps
+get_new_handicaps	get_new_handicaps
+read_all_results	read_all_results
+read_results	read_results
+reigel_formula	reigel_formula
+round_to_handicap	round_to_handicap

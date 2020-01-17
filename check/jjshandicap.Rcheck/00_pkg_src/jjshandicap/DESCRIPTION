@@ -1,0 +1,19 @@
+Package: jjshandicap
+Title: Jesmond Joggers Winter Handicap
+Version: 0.0.1
+Authors@R: 
+    person(given = "Jonny",
+           family = "Law",
+           role = c("aut", "cre"),
+           email = "law.jonny@googlemail.com")
+Description: Provides functions to summarise and present the results of the winter handicap race series
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+Imports: lubridate, dplyr, tibble, readr, stringr, purrr, magrittr,
+        kableExtra
+RoxygenNote: 7.0.2
+NeedsCompilation: no
+Packaged: 2020-01-17 13:12:15 UTC; root
+Author: Jonny Law [aut, cre]
+Maintainer: Jonny Law <law.jonny@googlemail.com>

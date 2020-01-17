@@ -1,0 +1,7 @@
+calculate_handicaps     Use 5k time to predict running time using the
+                        Reigel Formula
+get_new_handicaps       Calculate new handicaps
+read_all_results        Read all results
+read_results            Title
+reigel_formula          Title
+round_to_handicap       Title

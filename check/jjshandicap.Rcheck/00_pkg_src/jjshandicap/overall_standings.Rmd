@@ -1,0 +1,50 @@
+---
+title: "Overall Standings"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(jjshandicap)
+library(dplyr)
+library(kableExtra)
+library(lubridate)
+theme_set(theme_minimal())
+```
+
+```{r all_results}
+all_results <- readr::read_rds("data/all_results.Rds")
+winter_results = all_results %>% 
+  filter(stringr::str_detect(handicap, "2019"))
+```
+
+The overall standings are calculated by summing your best finishing position in three races.
+
+```{r overall-standings}
+total_races <- winter_results %>%
+  group_by(first_name, second_name) %>%
+  summarise(total_races = n())
+
+results_by_handicap <- winter_results %>%
+  drop_na() %>%
+  select(first_name, second_name, position, handicap) %>%
+  group_by(first_name, second_name) %>% 
+  spread(key = handicap, value = position)
+
+winter_results %>%
+  group_by(first_name, second_name) %>%
+  mutate(position_helper = row_number(position)) %>% 
+  filter(position_helper <= 3) %>% 
+  group_by(first_name, second_name) %>%
+  summarise(points = sum(position)) %>%
+  inner_join(total_races) %>%
+  inner_join(results_by_handicap) %>%
+  filter(total_races >= 3) %>%
+  ungroup() %>%
+  mutate(position = dplyr::dense_rank(points)) %>%
+  select(position, total_races, first_name, second_name, points, `20191`, `20192`, `20193`, `20194`) %>%
+  arrange(position) %>%
+  select(-total_races) %>%
+  knitr::kable(format = "html", booktabs = T, col.names = c("Position", "First", "Second", "Points", "Handicap 1", "Handicap 2", "Handicap 3", "Handicap 4"), ) %>% 
+  kable_styling(latex_options = "striped")
+```

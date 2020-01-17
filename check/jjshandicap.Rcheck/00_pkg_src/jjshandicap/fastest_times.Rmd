@@ -1,0 +1,53 @@
+---
+title: "Fastest Times"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(jjshandicap)
+library(dplyr)
+library(kableExtra)
+library(lubridate)
+```
+
+```{r all_results}
+all_results <- readr::read_rds("data/all_results.Rds")
+
+winter_results = all_results %>% 
+  filter(grepl(pattern = "2019", x = handicap))
+```
+
+## Jesmond Dene Course
+
+These are the fastest times this season on the [Jesmond Dene Course](https://www.strava.com/segments/20074721?filter=overall).
+
+```{r fastest-times}
+winter_results %>%
+  filter(course == "jesmond dene") %>% 
+  group_by(sex) %>%
+  top_n(3, wt = desc(running_time)) %>%
+  ungroup() %>%
+  select(sex, handicap, first_name, second_name, running_time) %>%
+  arrange(sex, running_time) %>%
+  mutate(running_time = seconds_to_period(running_time)) %>%
+  knitr::kable(format = "html", booktabs = T, col.names = c("Sex", "Race", "First", "Second", "Time")) %>% 
+  kable_styling(latex_options = "striped")
+```
+
+## Little Moor Course
+
+These are the fastest times this season on the [Little Moor course](https://www.strava.com/segments/16966180).
+
+```{r fastest-times-moor}
+winter_results %>%
+  filter(course == "little moor") %>% 
+  group_by(sex) %>%
+  top_n(3, wt = desc(running_time)) %>%
+  ungroup() %>%
+  select(sex, handicap, first_name, second_name, running_time) %>%
+  arrange(sex, running_time) %>%
+  mutate(running_time = seconds_to_period(running_time)) %>%
+  knitr::kable(format = "html", booktabs = T, col.names = c("Sex", "Race", "First", "Second", "Time")) %>% 
+  kable_styling(latex_options = "striped")
+```

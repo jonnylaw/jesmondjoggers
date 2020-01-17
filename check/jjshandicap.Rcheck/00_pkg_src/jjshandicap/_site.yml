@@ -1,0 +1,24 @@
+name: jesmond-joggers
+output_dir: docs
+navbar:
+  title: Jesmond Joggers Grand Prix
+  left:
+  - text: Home
+    icon: fa-home
+    href: index.html
+  - text: Winter Grand Prix 2018/19
+    menu:
+    - text: Results
+      href: results.html
+    - text: Fastest Times
+      href: fastest_times.html
+    - text: Overall Standings
+      href: overall_standings.html
+    - text: Handicaps
+      href: handicaps.html
+output:
+  html_document:
+    theme: cerulean
+    lib_dir: site_libs
+    self_contained: no
+
