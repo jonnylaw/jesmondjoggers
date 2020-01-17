@@ -30,11 +30,6 @@ new_handicaps <- get_new_handicaps(all_results %>% filter(handicap >= 201901), m
 new_handicaps$new_handicap = seconds_to_period(new_handicaps$new_handicap)
 ```
 
-```{r}
-new_handicaps %>% 
-  write_csv("~/Desktop/new_handicaps.csv")
-```
-
 ```{r display-new-handicaps}
 # Display new handicaps by time
 new_handicaps %>%
