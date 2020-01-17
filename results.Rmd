@@ -12,7 +12,7 @@ theme_set(theme_minimal())
 ```
 
 ```{r all-results}
-source("scripts/read_results.R")
+all_results <- read_rds("data/all_results.Rds")
 
 winter_results = all_results %>% 
   filter(stringr::str_detect(handicap, "2019"))

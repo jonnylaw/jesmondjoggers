@@ -12,7 +12,8 @@ theme_set(theme_minimal())
 ```
 
 ```{r all_results}
-source("scripts/read_results.R")
+all_results <- read_rds("data/all_results.Rds")
+
 winter_results = all_results %>% 
   filter(grepl(pattern = "2019", x = handicap))
 ```
@@ -24,6 +25,23 @@ These are the fastest times this season on the [Jesmond Dene Course](https://www
 ```{r fastest-times}
 winter_results %>%
   filter(course == "jesmond dene") %>% 
+  group_by(sex) %>%
+  top_n(3, wt = desc(running_time)) %>%
+  ungroup() %>%
+  select(sex, handicap, first_name, second_name, running_time) %>%
+  arrange(sex, running_time) %>%
+  mutate(running_time = seconds_to_period(running_time)) %>%
+  knitr::kable(format = "html", booktabs = T, col.names = c("Sex", "Race", "First", "Second", "Time")) %>% 
+  kable_styling(latex_options = "striped")
+```
+
+## Little Moor Course
+
+These are the fastest times this season on the Little Moor course.
+
+```{r fastest-times-moor}
+winter_results %>%
+  filter(course == "little moor") %>% 
   group_by(sex) %>%
   top_n(3, wt = desc(running_time)) %>%
   ungroup() %>%
