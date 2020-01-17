@@ -9,7 +9,6 @@ library(jjshandicap)
 library(dplyr)
 library(kableExtra)
 library(lubridate)
-theme_set(theme_minimal())
 ```
 
 ```{r all_results}
